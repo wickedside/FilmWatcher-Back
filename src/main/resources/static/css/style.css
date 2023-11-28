@@ -1,0 +1,266 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a191f;
+  font-family: "Open Sans", sans-serif;
+}
+
+.header__content {
+  position: fixed;
+  background: #222028;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px;
+  width: 100%;
+  height: 60px;
+  z-index: 5;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 70%);
+}
+
+.header__login-s{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo {
+  font-size: 32px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.header__login {
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.header__search {
+  padding: 8px;
+  border: 2px solid #1a191f;
+  border-radius: 5px;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  width: 100%;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+
+.movie {
+  width: 240px;
+  margin: 10px;
+  position: relative;
+}
+
+.movie__cover-inner {
+  position: relative;
+  height: 360px;
+}
+
+.movie__cover {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+}
+
+.movie__cover--darkened {
+  background-color: #000000;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.movie__cover--darkened:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.movie__info {
+  padding: 10px 0px;
+}
+
+.movie__title {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.movie__category {
+  font-size: 14px;
+  color: #0ebbff;
+}
+
+.movie__average {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a191f;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.movie__average--green {
+  border: 1px solid green;
+}
+
+.movie__average--orange {
+  border: 1px solid orange;
+}
+
+.movie__average--red {
+  border: 1px solid red;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: width 2s;
+}
+
+.modal--show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__card {
+  background-color: #ffffff;
+  max-width: 600px;
+  padding: 16px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  background-color: #1a191f;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__movie-backdrop {
+  width: 200px;
+  margin: 0 auto
+}
+
+.modal__movie-info {
+  margin-left: 20px;
+}
+
+.modal__button-goto {
+  padding: 5px;
+  margin: 10px;
+  align-self: center;
+}
+
+.modal__button-details {
+  color: black;
+  text-decoration: none;
+}
+
+.modal__button-close {
+  padding: 5px;
+  margin: 10px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.modal__movie-site {
+  color: #ffd80e
+}
+
+ul li {
+  padding: 5px;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.movie-details {
+  width: 60%;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.movie-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.movie-title-en {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.movie-title-lang {
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.movie-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.movie-image img {
+  width: 400px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+
+.movie-description, .movie-rating-kp, .movie-rating-imdb, .movie-trailer, .movie-user-rating, .movie-comments {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.movie-trailer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.movie-trailer iframe {
+  width: 560px;
+  height: 315px;
+  border: none;
+}

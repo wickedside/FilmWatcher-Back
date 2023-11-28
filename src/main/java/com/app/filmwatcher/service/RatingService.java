@@ -26,7 +26,7 @@ public class RatingService {
     }
 
     public List<Rating> findByUserId(Long userId) {
-        return ratingRepository.findByUserId(userId);
+        return ratingRepository.findByUser_UserId(userId);
     }
 
     // Добавьте другие методы по мере необходимости

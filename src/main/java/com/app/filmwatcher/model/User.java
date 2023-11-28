@@ -1,9 +1,13 @@
 package com.app.filmwatcher.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +24,14 @@ public class User {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id" /* nullable = false*/)
     private Role role;
+
+    public User(String username, String password, String email){
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
     public Long getUserId() {
         return userId;

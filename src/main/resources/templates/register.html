@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://ww.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Registration Form Example</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="/css/reg.css">
+
+</head>
+<body>
+
+<div class="login-form">
+  <section>
+    <h1>Регистрация</h1>
+    <div class="content">
+      <div class="input-field">
+      </div>
+        <form method="post" th:action="@{/api/regSave}" th:object="${userForm}">
+        <input type="email"  id="email" name="email" placeholder="EMAIL" th:field="*{email}">
+      <div class="input-field">
+        <input id="username" name="username" placeholder="Имя пользователя" th:field="*{username}">
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" name="password" placeholder="parol" th:field="*{password}">
+      </div>
+      <a href="login.html" class="link">Уже зарегистрированы?</a>
+      <div class="action">
+        <button type="submit">Зарегистрироваться</button>
+      </div>
+    </form>
+    </div>
+  </section>
+</div>
+
+  <script  src="/static/reg.js"></script>
+
+</body>
+</html>

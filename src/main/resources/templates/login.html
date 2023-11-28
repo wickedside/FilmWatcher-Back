@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Login Form Example</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="/css/reg.css">
+
+</head>
+<body>
+
+  <section>
+    <div class="login-form">
+    <h1>Войти</h1>
+    <div class="action">
+      <form method="post" th:action="@{/api/loginPage}">
+        <div class="content">
+          <div class="input-field">
+            <input type="username" id="username" name="username" placeholder="Username" autocomplete="nope">
+          </div>
+          <div class="input-field">
+            <input type="password"  id="password" name="password" placeholder="Password" autocomplete="new-password">
+          </div>
+        </div>
+        <a href="/api/regPage">
+          <button type="button">Зарегистрироваться</button>
+        </a>
+        <button type="submit">Войти</button>
+      </form>
+
+    </div>
+    </div>
+  </section>
+
+
+  <!--<script  src="/static/reg.js"></script>-->
+
+</body>
+</html>

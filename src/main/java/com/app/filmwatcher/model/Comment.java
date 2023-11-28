@@ -1,6 +1,6 @@
 package com.app.filmwatcher.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
