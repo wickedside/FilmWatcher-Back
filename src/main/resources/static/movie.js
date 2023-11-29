@@ -11,8 +11,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (movieId) {
         loadMovieDetails(movieId);
+        loadComments(movieId);
+        setupCommentForm(movieId);
     }
 });
+
+async function loadComments(movieId) {
+    // Загрузка комментариев с сервера
+    // Здесь нужно указать URL вашего API для загрузки комментариев
+    const response = await fetch(`/api/comments?movieId=${movieId}`);
+    const comments = await response.json();
+
+    const commentsContainer = document.querySelector("#comments-container");
+    commentsContainer.innerHTML = ''; // Очищаем контейнер
+
+    comments.forEach(comment => {
+        const commentElement = document.createElement("div");
+        commentElement.classList.add("comment");
+        commentElement.innerHTML = `
+            <p><strong>${comment.user.username}</strong>: ${comment.commentText}</p>
+        `;
+        commentsContainer.appendChild(commentElement);
+    });
+}
+
+function setupCommentForm(movieId) {
+    const form = document.querySelector("#comment-form");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const commentText = document.querySelector("#comment-text").value;
+        // Отправка комментария на сервер
+        // Здесь нужно указать URL вашего API для отправки комментариев
+        await fetch(`/api/comments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ movieId, commentText })
+        });
+        // Перезагрузка комментариев
+        loadComments(movieId);
+    });
+}
 
 async function loadMovieTrailers(id) {
     const resp = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/videos`, {

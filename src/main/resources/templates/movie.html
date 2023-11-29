@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
             </div>
             <div class="movie-comments">
                 <h2>Комментарии</h2>
-                <form id="comment-form">
+                <form id="comment-form" method="post" action="/api/comments/addComment">
                     <textarea id="comment-text" placeholder="Напишите комментарий..."></textarea>
                     <button type="submit">Отправить</button>
                 </form>
