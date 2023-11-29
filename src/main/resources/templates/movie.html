@@ -32,8 +32,14 @@
                     <img src="" alt="Постер фильма">
                 </div>
             </div>
-            <div class="movie-user-rating">Оценка фильма</div>
-            <div class="movie-comments">Комментарии</div>
+            <div class="movie-comments">
+                <h2>Комментарии</h2>
+                <form id="comment-form">
+                    <textarea id="comment-text" placeholder="Напишите комментарий..."></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div id="comments-container"></div>
+            </div>
         </div>
     </div>
     <script src="/movie.js"></script>

@@ -225,7 +225,7 @@ ul li {
 }
 
 .movie-title-lang {
-  border-bottom: 1px solid white;
+  border-bottom: 5px solid white;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -244,8 +244,15 @@ ul li {
   margin-right: 40px;
 }
 
-.movie-description, .movie-rating-kp, .movie-rating-imdb, .movie-trailer, .movie-user-rating, .movie-comments {
+.movie-description, .movie-rating-kp, .movie-rating-imdb, .movie-trailer, .movie-user-rating {
   text-align: justify;
+  margin-bottom: 20px;
+}
+
+.movie-comments{
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 5px solid white;
   margin-bottom: 20px;
 }
 
