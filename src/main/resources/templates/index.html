@@ -9,20 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <title>FilmWatcher App</title>
+    <title>FilmWatcher - главная страница</title>
   </head>
   <body>
-  <a href="/api/logoutPage">logout</a>
-  <header class="header__content">
-    <a href="index.html" class="header__logo">FilmWatcher</a>
-    <div class="header__login-s">
 
+  <header class="header__content">
+    <a href="/api/getMainPage" class="header__logo">FilmWatcher</a>
+    <div class="header__login-s">
+      <a class="header__login" href="/api/logoutPage">Выйти</a>
       <form>
         <input type="text" class="header__search" placeholder="Поиск" />
       </form>
     </div>
   </header>
-
     <div class="container">
       <div class="movies"></div>
       <div class="modal"></div>

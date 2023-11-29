@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Выход</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="/css/reg.css">
 </head>
 <body>
-<form method="post" th:action="@{/logout}">
-    <button type="submit">Logout</button>
-</form>
+<header class="header__content">
+    <a class="header__logo">FilmWatcher</a>
+</header>
+<div class="login-form">
+    <section>
+        <h1>Вы уверены, что хотите выйти?</h1>
+        <div class="content">
+            <form method="post" th:action="@{/logout}">
+                <a href="/api/getMainPage" class="link">Нет?</a>
+                <div class="action">
+                    <button type="submit">Да</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
 </body>
 </html>
