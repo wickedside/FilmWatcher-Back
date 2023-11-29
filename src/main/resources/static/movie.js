@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadComments(movieId) {
     // Загрузка комментариев с сервера
-    // Здесь нужно указать URL вашего API для загрузки комментариев
     const response = await fetch(`/api/comments?movieId=${movieId}`);
     const comments = await response.json();
 
@@ -26,10 +25,13 @@ async function loadComments(movieId) {
     commentsContainer.innerHTML = ''; // Очищаем контейнер
 
     comments.forEach(comment => {
+        const commentDate = new Date(comment.createdAt); // Преобразование строки в объект Date
+        const formattedDate = commentDate.toLocaleString(); // Форматирование даты
+
         const commentElement = document.createElement("div");
         commentElement.classList.add("comment");
         commentElement.innerHTML = `
-            <p><strong>${comment.user.username}</strong>: ${comment.commentText}</p>
+            <p><span class="comment-date">${formattedDate}</span> | <strong>${comment.user.username}</strong>: ${comment.commentText}</p>
         `;
         commentsContainer.appendChild(commentElement);
     });
@@ -42,7 +44,7 @@ function setupCommentForm(movieId) {
         const commentText = document.querySelector("#comment-text").value;
         // Отправка комментария на сервер
         // Здесь нужно указать URL вашего API для отправки комментариев
-        await fetch(`/api/comments`, {
+        await fetch(`/api/comments/addComment`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

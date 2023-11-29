@@ -271,3 +271,7 @@ ul li {
   height: 315px;
   border: none;
 }
+
+.comment-form {
+  align-content: center;
+}

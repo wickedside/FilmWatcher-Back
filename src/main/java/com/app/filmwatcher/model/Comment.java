@@ -1,10 +1,13 @@
 package com.app.filmwatcher.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "comments")
+
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +19,15 @@ public class Comment {
     private User user;
 
     @Column(name = "movie_id", nullable = false)
+
     private Integer movieId;
 
     @Column(name = "comment_text", nullable = false)
+
     private String commentText;
 
     @Column(name = "created_at", nullable = false)
+
     private LocalDateTime createdAt;
 
     public Long getCommentId() {

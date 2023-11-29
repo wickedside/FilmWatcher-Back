@@ -34,12 +34,14 @@
             </div>
             <div class="movie-comments">
                 <h2>Комментарии</h2>
-                <form id="comment-form" method="post" action="/api/comments/addComment">
-                    <textarea id="comment-text" placeholder="Напишите комментарий..."></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-                <div id="comments-container"></div>
             </div>
+            <form id="comment-form" method="post" action="/api/comments/addComment">
+                <textarea id="comment-text" placeholder="Напишите комментарий..."></textarea>
+                <div class="comment_submit_button">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+            <div id="comments-container"></div>
         </div>
     </div>
     <script src="/movie.js"></script>
